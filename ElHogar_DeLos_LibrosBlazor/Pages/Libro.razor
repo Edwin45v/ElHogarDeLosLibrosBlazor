@@ -1,0 +1,14 @@
+﻿@page "/Libro"
+@using Models
+@using Services
+@inject ILibroService LibroService
+
+<MudText Typo="Typo.h3">El Hogar De Los Libros</MudText>
+
+@code {
+    IEnumerable<Libro> deptos = new List<Libro>();
+    protected override async Task OnInitializedAsync()
+    {
+        
+    }
+}
