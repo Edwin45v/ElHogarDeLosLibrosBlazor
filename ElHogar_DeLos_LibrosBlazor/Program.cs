@@ -20,8 +20,9 @@ namespace ElHogar_DeLos_LibrosBlazor.ClienteBlazor
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:44326/api/") });
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:44315/api/") });
             builder.Services.AddScoped<ILibroService, LibroService>();
+            builder.Services.AddScoped<IAlumnoService, AlumnoService>();
 
             builder.Services.AddMudServices();
 

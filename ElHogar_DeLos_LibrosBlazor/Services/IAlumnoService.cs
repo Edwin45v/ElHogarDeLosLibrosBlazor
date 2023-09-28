@@ -2,5 +2,6 @@
 {
     public interface IAlumnoService
     {
+        Task<IEnumerable<Alumno>> GetAll();
     }
 }

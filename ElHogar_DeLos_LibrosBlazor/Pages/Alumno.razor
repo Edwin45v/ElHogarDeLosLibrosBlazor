@@ -1,0 +1,15 @@
+﻿@page "/alumno"
+@using Models
+@using Services
+@inject IAlumnoService AlumnoService
+
+<MudText Typo="Typo.h4">Alumno</MudText>
+
+@code {
+    IEnumerable<Alumno> alumnos = new List<Alumno>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        alumnos = await AlumnoService.GetAll();
+    }
+}
