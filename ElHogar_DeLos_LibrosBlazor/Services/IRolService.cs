@@ -6,8 +6,8 @@ using ElHogar_DeLos_LibrosBlazor.Models;
 
 namespace ElHogar_DeLos_LibrosBlazor.Services
 {
-    public interface IAlumnoService
+    public interface IRolService
     {
-        Task<IEnumerable<Alumno>> GetAll();
+        Task<IEnumerable<Rol>> GetAll();
     }
 }

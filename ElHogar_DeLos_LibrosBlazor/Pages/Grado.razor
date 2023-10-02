@@ -1,0 +1,14 @@
+﻿@page "/Libro"
+@using Models
+@using Services
+@inject ILibroService LibroService
+
+<MudText Typo="Typo.h3">Grado</MudText>
+
+@code {
+    IEnumerable<Grado> grados = new List<Grado>();
+    protected override async Task OnInitializedAsync()
+    {
+        grados = await GradoService.GetAll();
+    }
+}

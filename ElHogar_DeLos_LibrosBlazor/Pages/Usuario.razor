@@ -1,18 +1,18 @@
-﻿@page "/alumno"
+﻿@page "/Usuario/"
 @using Models
 @using Services
-@inject IAlumnoService AlumnoService
+@inject IUsuarioService UsuarioService
 
-<MudText Typo="Typo.h4">Alumno</MudText>
+<MudText Typo="Typo.h3">Usuario</MudText>
 
-@if (alumno == null)
+@if (usuarios == null)
 {
     <p>Cargando...</p>
 }
 else
 {
     <MudGrid>
-        @foreach (var item in alumno)
+        @foreach (var item in usuarios)
         {
             <MudItem xs="12" sm="10" md="6" lg="4">
                 <MudCard>
@@ -22,7 +22,7 @@ else
                         </CardHeaderContent>
                     </MudCardHeader>
                     <MudCardContent>
-                        <MudText Typo="Typo.body2">@item.Apellido</MudText>
+                        <MudText Typo="Typo.body2">@item.Descripcion</MudText>
                     </MudCardContent>
                     <MudCardActions>
                         <MudButton Link="@($"/detalles/{item.Id}")" Variant="Variant.Outlined" Color="Color.Success">Detalles</MudButton>
@@ -33,12 +33,10 @@ else
     </MudGrid>
 }
 
-
 @code {
-    IEnumerable<Alumno> alumno = new List<Alumno>();
-
+    IEnumerable<Usuario> usuarios = new List<Usuario>();
     protected override async Task OnInitializedAsync()
     {
-        alumno = await AlumnoService.GetAll();
+        usuarios = await UsuarioService.GetAll();
     }
 }
